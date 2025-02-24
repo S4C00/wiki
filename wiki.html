@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Top Down Model in Network Design</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0; max-width: 600px; }
+        .button { background-color: #4CAF50; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; }
+        .button:hover { background-color: #45a049; }
+        input, textarea { width: 100%; padding: 8px; margin-top: 8px; border-radius: 4px; border: 1px solid #ddd; }
+        img { max-width: 100%; margin-top: 10px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Top Down Model in Network Design</h1>
+        <div id="content" contenteditable="false">
+            The Top Down model focuses on network design starting from business objectives towards the physical infrastructure.
+            It consists of several layers: application layer, logical layer, physical layer, transport layer, and infrastructure layer.
+            This model aligns the network with business needs, improving scalability, performance, and security.
+            <br><br>
+            <h2>Top Down Model Phases</h2>
+            The process generally follows these steps:
+            <ol>
+                <li><b>Business Requirements Analysis:</b> Identifying business needs and goals to define the network's technical requirements.</li>
+                <li><b>Logical Network Design:</b> Creating a conceptual model of the network, including logical architecture, protocols, and required services.</li>
+                <li><b>Physical Network Design:</b> Selecting hardware, cabling, physical topology, and other components needed to implement the logical design.</li>
+                <li><b>Testing, Optimization, and Implementation:</b> Evaluating network performance, making necessary adjustments, and deploying in a production environment.</li>
+                <li><b>Continuous Maintenance:</b> Monitoring, troubleshooting, and regular updates to ensure optimal performance.</li>
+            </ol>
+            This approach provides a clear view of how each network component directly supports the organization's strategic objectives.
+            <br><br>
+             
+            <img src="img1.jpg" alt="Example">
+            <br><br>
+            <h2>Personal Conclusions</h2>
+            <li><b>Saul Coronel:</b> The Top Down model in network design is a structured and strategic approach that truly emphasizes aligning technology with business goals. Personally, I find it fascinating how starting from high-level requirements and gradually drilling down into technical specifics not only enhances efficiency but also ensures that every network component has a clear purpose. This methodology offers a sense of direction and clarity, making complex network projects more manageable and goal-oriented. Its definitely a model Id consider applying in future projects, as it blends planning with practicality.</li>
+            <li><b>Francisco Alvarez:</b> The Top-Down model in network design allows for the development of an infrastructure aligned with the needs of the business and users. By starting the design from the application and service layer instead of the physical infrastructure, it is ensured that the network efficiently supports the specific requirements of the organization.
+                One of the main benefits of this approach is efficiency and scalability, as it allows for optimizing performance from the start and facilitates future expansion without the need for costly redesigns. In addition, by following a structured plan, errors in implementation are reduced and hasty decisions about hardware or technology are avoided.</li>
+            <li><b>Oscar Marquez:</b> The Top-Down model is a methodological approach that allows complex problems to be broken down into more manageable parts, making their analysis and resolution easier. Its application in areas such as programming, system design, and project management enables the structured development of solutions, starting from a general vision down to specific details.
+
+                the Top-Down approach is useful for projects that require a well-defined global vision before delving into details. However, it can benefit from complementary approaches to adapt to changes and improve development flexibility.</li>
+            <li><b>Yael Herdandez:</b> The Top-Down model is a robust and effective methodology for network design, as it ensures the network is aligned with business objectives and user requirements. Although it requires more time and resources upfront, its structured approach minimizes risks and ensures an efficient and scalable design.</li>
+            <li><b>Cristian Duran:</b> The "Top-Down" methodology for designing networks is based on dividing the project into six phases: first, the requirements are analyzed; then, a logical design is created; then, the physical design is developed; the designs are tested and optimized; the network is implemented and, finally, it is continuously monitored and improved. This approach allows for efficient budget control and ensures that the network meets the established objectives.</li>
+        </div>
+        <button class="button" onclick="showLogin()">Edit</button>
+        <button class="button" id="saveButton" style="display:none;" onclick="saveContent()">Save Changes</button>
+        <h2>References</h2>
+        <ul>
+            <li>Computer Networks - Tanenbaum, A. S.</li>
+            <li>Cisco CCNA Routing and Switching</li>
+            <li>Network Design Cookbook - Michel Thomatis</li>
+        </ul>
+    </div>
+
+    <div class="card" id="loginCard" style="display:none;">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="button" onclick="login()">Access</button>
+    </div>
+
+    <script>
+        const USER = { username: 'admin', password: '1234' };
+        function showLogin() {
+            document.getElementById('loginCard').style.display = 'block';
+        }
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === USER.username && password === USER.password) {
+                document.getElementById('loginCard').style.display = 'none';
+                document.getElementById('content').contentEditable = 'true';
+                document.getElementById('saveButton').style.display = 'inline-block';
+                alert('You can now edit the content directly.');
+            } else {
+                alert('Incorrect credentials');
+            }
+        }
+        function saveContent() {
+            document.getElementById('content').contentEditable = 'false';
+            document.getElementById('saveButton').style.display = 'none';
+            alert('Content saved successfully');
+        }
+    </script>
+</body>
+</html>
